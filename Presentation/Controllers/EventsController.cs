@@ -18,7 +18,7 @@ public class EventsController(EventService eventService) : ControllerBase
     }
 
     [HttpGet("{Id}")]
-    public async Task<IActionResult> GetAll(int id)
+    public async Task<IActionResult> GetAll(Guid id)
     {
         var result = await _eventService.GetAsync(id);
         return result is not null ? Ok(result) : NotFound();

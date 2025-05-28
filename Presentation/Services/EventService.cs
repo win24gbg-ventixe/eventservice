@@ -13,7 +13,7 @@ public class EventService(DataContext context)
         return entities;
     }
 
-    public async Task<EventEntity?> GetAsync(int eventId)
+    public async Task<EventEntity?> GetAsync(Guid eventId)
     {
         var entity = await _context.Events.FirstOrDefaultAsync(x => x.Id == eventId );
         return entity;
